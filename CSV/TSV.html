@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>class CSV::MalformedCSVError - RDoc Documentation</title>
+<title>class CSV::TSV - RDoc Documentation</title>
 
-  <meta name="keywords" content="ruby,class,CSV::MalformedCSVError">
+  <meta name="keywords" content="ruby,class,CSV::TSV">
 
-    <meta name="description" content="class CSV::MalformedCSVError: The error thrown when the parser encounters illegal CSV formatting.">
+    <meta name="description" content="Documentation for the CSV::TSV class">
 
 
 <script type="text/javascript">
@@ -68,7 +68,7 @@
   
   <div id="parent-class-section" class="nav-section">
   <h3>Ancestors</h3>
-  <ul><li>RuntimeError</li></ul>
+  <ul><li><a href="../CSV.html">CSV</a><ul><li><a href="../Object.html">Object</a><ul><li>BasicObject</li></ul></li></ul></li></ul>
 </div>
 
   
@@ -93,7 +93,7 @@
 
 </nav>
 
-<main role="main" aria-labelledby="class-CSV::MalformedCSVError">
+<main role="main" aria-labelledby="class-CSV::TSV">
   
   
     <ol role="navigation" aria-label="breadcrumb" class="breadcrumb">
@@ -106,57 +106,25 @@
       
       <li>
         
-        <span>MalformedCSVError</span>
+        <span>TSV</span>
         
       </li>
       
     </ol>
   
 
-  <h1 id="class-CSV::MalformedCSVError" class="anchor-link class">
-    class CSV::MalformedCSVError
+  <h1 id="class-CSV::TSV" class="anchor-link class">
+    class CSV::TSV
   </h1>
 
   <section class="description">
     
-<p>The error thrown when the parser encounters illegal <a href="../CSV.html"><code>CSV</code></a> formatting.</p>
-
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section anchor-link">
 
 
 
-    <section class="attribute-method-details" class="method-section">
-      <header>
-        <h3>Attributes</h3>
-      </header>
-
-      <div id="attribute-i-line_number" class="method-detail anchor-link">
-        <div class="method-heading attribute-method-heading">
-          <a href="#attribute-i-line_number" title="Link to this attribute">
-            <span class="method-name">line_number</span>
-            <span class="attribute-access-type">[R]</span>
-          </a>
-        </div>
-
-        <div class="method-description">
-        
-        </div>
-      </div>
-      <div id="attribute-i-lineno" class="method-detail anchor-link">
-        <div class="method-heading attribute-method-heading">
-          <a href="#attribute-i-lineno" title="Link to this attribute">
-            <span class="method-name">lineno</span>
-            <span class="attribute-access-type">[R]</span>
-          </a>
-        </div>
-
-        <div class="method-description">
-        
-        </div>
-      </div>
-    </section>
 
 
      <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
@@ -169,7 +137,7 @@
             <div class="method-heading">
               <a href="#method-c-new" title="Link to this method">
                 <span class="method-name">new</span>
-                <span class="method-args">(message, line_number)</span>
+                <span class="method-args">(data, **options)</span>
               </a>
             </div>
         </div>
@@ -182,16 +150,15 @@
 
         <div class="method-description">
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/csv.rb, line 855</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">line_number</span>)
-  <span class="ruby-ivar">@line_number</span> = <span class="ruby-identifier">line_number</span>
-  <span class="ruby-keyword">super</span>(<span class="ruby-node">&quot;#{message} in line #{line_number}.&quot;</span>)
+            <pre><span class="ruby-comment"># File lib/csv.rb, line 2133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">data</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">data</span>, <span class="ruby-operator">**</span>({<span class="ruby-value">col_sep:</span> <span class="ruby-string">&quot;\t&quot;</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)))
 <span class="ruby-keyword">end</span></pre>
           </div>
           
             <div class="method-calls-super">
               Calls superclass method
-              
+              <a href="../CSV.html#method-c-new"><code>CSV::new</code></a>
             </div>
         </div>
 
